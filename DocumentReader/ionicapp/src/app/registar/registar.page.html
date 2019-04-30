@@ -1,0 +1,30 @@
+  
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1>Click To Scan</h1>
+
+  <ion-button color="secondary" (click)="scanCode()">Scan Code</ion-button>
+  <!-- <button ion-button round (click)="scanCode()">Scan Code</button> -->
+
+  <div *ngIf="scannedData">
+    <p>Scanned Code Text : <b>{{scannedData['text']}}</b></p>
+    <p>Scanned Code Format : <b>{{scannedData['format']}}</b></p>
+  </div>
+
+
+
+  <h1>Click To Generate QR Code</h1>
+  <ion-item>
+  <ion-input type="text" [(ngModel)]="encodeData"></ion-input>
+</ion-item>
+  <!-- <button ion-button (click)="encodedText()">Encode Text</button> -->
+  <ion-button color="success" (click)="encodedText()">Encode Text</ion-button> 
+
+
+</ion-content>
